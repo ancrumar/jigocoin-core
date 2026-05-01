@@ -27,3 +27,30 @@ target/
 /guix-build-*
 
 /ci/scratch/
+
+# --- Jigocoin local runtime data ---
+
+# Blockchain data
+blocks/
+chainstate/
+indexes/
+
+# Wallets
+wallets/
+
+# Node runtime files
+*.dat
+*.cookie
+*.pid
+*.lock
+
+# Logs
+*.log
+
+# Temp and exports
+*.csv
+*.tmp
+
+# Local backups
+backup_*.dat
+backup_node1_*.tar.gz
