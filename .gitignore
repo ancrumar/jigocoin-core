@@ -54,3 +54,6 @@ wallets/
 # Local backups
 backup_*.dat
 backup_node1_*.tar.gz
+
+# Local tools (not part of core)
+tools/
