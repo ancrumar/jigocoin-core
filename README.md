@@ -1,79 +1,262 @@
-Bitcoin Core integration/staging tree
-=====================================
+# Jigocoin Core
 
-https://bitcoincore.org
+Jigocoin is a decentralized peer-to-peer digital currency derived from Bitcoin Core.
 
-For an immediately usable, binary version of the Bitcoin Core software, see
-https://bitcoincore.org/en/download/.
+This repository contains the reference implementation of the Jigocoin protocol.
 
-What is Bitcoin Core?
----------------------
+Jigocoin allows users to send payments directly to each other without relying on a central authority.
 
-Bitcoin Core connects to the Bitcoin peer-to-peer network to download and fully
-validate blocks and transactions. It also includes a wallet and graphical user
-interface, which can be optionally built.
+---
 
-Further information about Bitcoin Core is available in the [doc folder](/doc).
+# 🚀 Build Jigocoin from Source
 
-License
--------
+## System Requirements
 
-Bitcoin Core is released under the terms of the MIT license. See [COPYING](COPYING) for more
-information or see https://opensource.org/license/MIT.
+Recommended:
 
-Development Process
--------------------
+* Linux (Ubuntu 22.04+ or Debian 12+)
+* 4 GB RAM minimum
+* 20+ GB disk space
 
-The `master` branch is regularly built (see `doc/build-*.md` for instructions) and tested, but it is not guaranteed to be
-completely stable. [Tags](https://github.com/bitcoin/bitcoin/tags) are created
-regularly from release branches to indicate new official, stable release versions of Bitcoin Core.
+---
 
-The https://github.com/bitcoin-core/gui repository is used exclusively for the
-development of the GUI. Its master branch is identical in all monotree
-repositories. Release branches and tags do not exist, so please do not fork
-that repository unless it is for development reasons.
+## Install Dependencies (Ubuntu / Debian)
 
-The contribution workflow is described in [CONTRIBUTING.md](CONTRIBUTING.md)
-and useful hints for developers can be found in [doc/developer-notes.md](doc/developer-notes.md).
+```bash
+sudo apt update
 
-Testing
--------
+sudo apt install -y \
+  build-essential \
+  cmake \
+  pkg-config \
+  libevent-dev \
+  libboost-dev \
+  libboost-system-dev \
+  libboost-filesystem-dev \
+  libboost-test-dev \
+  libsqlite3-dev
+```
 
-Testing and code review is the bottleneck for development; we get more pull
-requests than we can review and test on short notice. Please be patient and help out by testing
-other people's pull requests, and remember this is a security-critical project where any mistake might cost people
-lots of money.
+---
 
-### Automated Testing
+## Clone Repository
 
-Developers are strongly encouraged to write [unit tests](src/test/README.md) for new code, and to
-submit new unit tests for old code. Unit tests can be compiled and run
-(assuming they weren't disabled during the generation of the build system) with: `ctest`. Further details on running
-and extending unit tests can be found in [/src/test/README.md](/src/test/README.md).
+```bash
+git clone https://github.com/ancrumar/jigocoin-core.git
 
-There are also [regression and integration tests](/test), written
-in Python.
-These tests can be run (if the [test dependencies](/test) are installed) with: `build/test/functional/test_runner.py`
-(assuming `build` is your build directory).
+cd jigocoin-core
+```
 
-The CI (Continuous Integration) systems make sure that every pull request is tested on Windows, Linux, and macOS.
-The CI must pass on all commits before merge to avoid unrelated CI failures on new pull requests.
+---
 
-### Manual Quality Assurance (QA) Testing
+## Build Jigocoin
 
-Changes should be tested by somebody other than the developer who wrote the
-code. This is especially important for large or high-risk changes. It is useful
-to add a test plan to the pull request description if testing the changes is
-not straightforward.
+```bash
+mkdir build
 
-Translations
-------------
+cd build
 
-Changes to translations as well as new translations can be submitted to
-[Bitcoin Core's Transifex page](https://explore.transifex.com/bitcoin/bitcoin/).
+cmake .. -DENABLE_IPC=OFF
 
-Translations are periodically pulled from Transifex and merged into the git repository. See the
-[translation process](doc/translation_process.md) for details on how this works.
+make -j$(nproc)
+```
 
-**Important**: We do not accept translation changes as GitHub pull requests because the next
-pull from Transifex would automatically overwrite them again.
+After compilation, binaries will be located in:
+
+```text
+build/bin/jigocoind
+build/bin/jigocoin-cli
+build/bin/jigocoin-wallet
+build/bin/jigocoin-util
+build/bin/jigocoin-tx
+```
+
+---
+
+# 🧱 Run a Jigocoin Node
+
+## Create Data Directory
+
+```bash
+mkdir ~/.jigocoin
+```
+
+---
+
+## Create Configuration File
+
+```bash
+nano ~/.jigocoin/jigocoin.conf
+```
+
+Example configuration:
+
+```ini
+server=1
+daemon=1
+
+rpcuser=jigouser
+rpcpassword=strongpassword
+
+rpcport=30462
+port=19335
+
+# Primary seed node
+addnode=34.10.226.240:19335
+```
+
+---
+
+## Start Node
+
+```bash
+./build/bin/jigocoind \
+  -datadir=$HOME/.jigocoin \
+  -daemon
+```
+
+---
+
+## Verify Node Status
+
+Check blockchain:
+
+```bash
+./build/bin/jigocoin-cli \
+  -datadir=$HOME/.jigocoin \
+  getblockchaininfo
+```
+
+Check peers:
+
+```bash
+./build/bin/jigocoin-cli \
+  -datadir=$HOME/.jigocoin \
+  getpeerinfo
+```
+
+---
+
+# 🌐 Network Parameters
+
+## Mainnet
+
+| Parameter     | Value                   |
+| ------------- | ----------------------- |
+| Network       | mainnet                 |
+| P2P Port      | **19335**               |
+| RPC Port      | **30462**               |
+| Bech32 Prefix | **jgc**                 |
+| Message Start | **0x4a 0x47 0x43 0x31** |
+
+---
+
+# 🌱 Seed Nodes
+
+The following public node is available for initial synchronization:
+
+```ini
+addnode=34.10.226.240:19335
+```
+
+More seed nodes will be added as the network expands.
+
+---
+
+# 💼 Wallet Usage
+
+Create a wallet:
+
+```bash
+jigocoin-cli createwallet "wallet01"
+```
+
+Generate a new address:
+
+```bash
+jigocoin-cli getnewaddress
+```
+
+Backup wallet:
+
+```bash
+jigocoin-cli backupwallet backup.dat
+```
+
+---
+
+# 🛠 Troubleshooting
+
+## Node does not connect to peers
+
+Run:
+
+```bash
+jigocoin-cli getpeerinfo
+```
+
+If no peers appear:
+
+Check:
+
+* Port **19335** is open
+* Firewall allows incoming connections
+* Seed node reachable
+* Internet connection active
+
+---
+
+## RPC connection problems
+
+Verify:
+
+```ini
+rpcport=30462
+```
+
+File:
+
+```text
+~/.jigocoin/jigocoin.conf
+```
+
+---
+
+## Port already in use
+
+Change RPC port:
+
+```ini
+rpcport=30463
+```
+
+---
+
+# 🔐 Security Recommendations
+
+Always:
+
+* Backup wallets regularly
+* Use strong RPC credentials
+* Protect wallet files
+* Do not expose RPC port publicly
+
+---
+
+# 🧪 Development Notes
+
+Jigocoin Core is based on Bitcoin Core.
+
+Changes from upstream Bitcoin Core are progressively applied to create an independent network implementation.
+
+---
+
+# 📜 License
+
+Jigocoin Core is released under the terms of the MIT License.
+
+See:
+
+COPYING
+
+This software is based on Bitcoin Core.
