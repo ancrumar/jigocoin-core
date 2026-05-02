@@ -1,9 +1,9 @@
-// Copyright (c) The Bitcoin Core developers
+// Copyright (c) The Jigocoin Core developers
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
-#ifndef BITCOIN_UTIL_LOG_H
-#define BITCOIN_UTIL_LOG_H
+#ifndef JIGOCOIN_UTIL_LOG_H
+#define JIGOCOIN_UTIL_LOG_H
 
 // This header works in tandem with `logging/categories.h`
 // to expose the complete logging interface.
@@ -117,4 +117,4 @@ inline void LogPrintFormatInternal(SourceLocation&& source_loc, BCLog::LogFlags 
 #define LogDebug(category, ...) detail_LogIfCategoryAndLevelEnabled(category, BCLog::Level::Debug, __VA_ARGS__)
 #define LogTrace(category, ...) detail_LogIfCategoryAndLevelEnabled(category, BCLog::Level::Trace, __VA_ARGS__)
 
-#endif // BITCOIN_UTIL_LOG_H
+#endif // JIGOCOIN_UTIL_LOG_H

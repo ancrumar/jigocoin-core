@@ -1,9 +1,9 @@
-// Copyright (c) 2016-present The Bitcoin Core developers
+// Copyright (c) 2016-present The Jigocoin Core developers
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
-#ifndef BITCOIN_VERSIONBITS_IMPL_H
-#define BITCOIN_VERSIONBITS_IMPL_H
+#ifndef JIGOCOIN_VERSIONBITS_IMPL_H
+#define JIGOCOIN_VERSIONBITS_IMPL_H
 
 #include <chain.h>
 #include <sync.h>
@@ -82,4 +82,4 @@ public:
     }
 };
 
-#endif // BITCOIN_VERSIONBITS_IMPL_H
+#endif // JIGOCOIN_VERSIONBITS_IMPL_H

@@ -1,9 +1,9 @@
-// Copyright (c) 2022-present The Bitcoin Core developers
+// Copyright (c) 2022-present The Jigocoin Core developers
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
-#ifndef BITCOIN_UTIL_BITDEQUE_H
-#define BITCOIN_UTIL_BITDEQUE_H
+#ifndef JIGOCOIN_UTIL_BITDEQUE_H
+#define JIGOCOIN_UTIL_BITDEQUE_H
 
 #include <bitset>
 #include <cstddef>
@@ -462,4 +462,4 @@ public:
     }
 };
 
-#endif // BITCOIN_UTIL_BITDEQUE_H
+#endif // JIGOCOIN_UTIL_BITDEQUE_H

@@ -1,9 +1,9 @@
-// Copyright (c) 2017-present The Bitcoin Core developers
+// Copyright (c) 2017-present The Jigocoin Core developers
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
-#ifndef BITCOIN_INDEX_BASE_H
-#define BITCOIN_INDEX_BASE_H
+#ifndef JIGOCOIN_INDEX_BASE_H
+#define JIGOCOIN_INDEX_BASE_H
 
 #include <attributes.h>
 #include <dbwrapper.h>
@@ -181,4 +181,4 @@ public:
     IndexSummary GetSummary() const;
 };
 
-#endif // BITCOIN_INDEX_BASE_H
+#endif // JIGOCOIN_INDEX_BASE_H

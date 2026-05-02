@@ -1,9 +1,9 @@
-// Copyright (c) 2016-present The Bitcoin Core developers
+// Copyright (c) 2016-present The Jigocoin Core developers
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
-#ifndef BITCOIN_BLOCKENCODINGS_H
-#define BITCOIN_BLOCKENCODINGS_H
+#ifndef JIGOCOIN_BLOCKENCODINGS_H
+#define JIGOCOIN_BLOCKENCODINGS_H
 
 #include <crypto/siphash.h>
 #include <primitives/block.h>
@@ -151,4 +151,4 @@ public:
     ReadStatus FillBlock(CBlock& block, const std::vector<CTransactionRef>& vtx_missing, bool segwit_active);
 };
 
-#endif // BITCOIN_BLOCKENCODINGS_H
+#endif // JIGOCOIN_BLOCKENCODINGS_H

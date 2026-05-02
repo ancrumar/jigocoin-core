@@ -1,9 +1,9 @@
-// Copyright (c) 2022-present The Bitcoin Core developers
+// Copyright (c) 2022-present The Jigocoin Core developers
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
-#ifndef BITCOIN_NODE_MEMPOOL_ARGS_H
-#define BITCOIN_NODE_MEMPOOL_ARGS_H
+#ifndef JIGOCOIN_NODE_MEMPOOL_ARGS_H
+#define JIGOCOIN_NODE_MEMPOOL_ARGS_H
 
 #include <util/result.h>
 
@@ -24,4 +24,4 @@ struct MemPoolOptions;
 [[nodiscard]] util::Result<void> ApplyArgsManOptions(const ArgsManager& argsman, const CChainParams& chainparams, kernel::MemPoolOptions& mempool_opts);
 
 
-#endif // BITCOIN_NODE_MEMPOOL_ARGS_H
+#endif // JIGOCOIN_NODE_MEMPOOL_ARGS_H

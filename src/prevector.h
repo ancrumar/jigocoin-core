@@ -1,9 +1,9 @@
-// Copyright (c) 2015-present The Bitcoin Core developers
+// Copyright (c) 2015-present The Jigocoin Core developers
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
-#ifndef BITCOIN_PREVECTOR_H
-#define BITCOIN_PREVECTOR_H
+#ifndef JIGOCOIN_PREVECTOR_H
+#define JIGOCOIN_PREVECTOR_H
 
 #include <algorithm>
 #include <cassert>
@@ -470,4 +470,4 @@ public:
     }
 };
 
-#endif // BITCOIN_PREVECTOR_H
+#endif // JIGOCOIN_PREVECTOR_H

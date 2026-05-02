@@ -1,9 +1,9 @@
-// Copyright (c) 2023-present The Bitcoin Core developers
+// Copyright (c) 2023-present The Jigocoin Core developers
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
-#ifndef BITCOIN_KERNEL_CS_MAIN_H
-#define BITCOIN_KERNEL_CS_MAIN_H
+#ifndef JIGOCOIN_KERNEL_CS_MAIN_H
+#define JIGOCOIN_KERNEL_CS_MAIN_H
 
 #include <sync.h>
 
@@ -19,4 +19,4 @@
  */
 extern RecursiveMutex cs_main;
 
-#endif // BITCOIN_KERNEL_CS_MAIN_H
+#endif // JIGOCOIN_KERNEL_CS_MAIN_H

@@ -1,9 +1,9 @@
-// Copyright (c) 2009-present The Bitcoin Core developers
+// Copyright (c) 2009-present The Jigocoin Core developers
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
-#ifndef BITCOIN_CRYPTO_HEX_BASE_H
-#define BITCOIN_CRYPTO_HEX_BASE_H
+#ifndef JIGOCOIN_CRYPTO_HEX_BASE_H
+#define JIGOCOIN_CRYPTO_HEX_BASE_H
 
 #include <span.h>
 
@@ -21,4 +21,4 @@ inline std::string HexStr(std::span<const std::byte> s) { return HexStr(MakeUCha
 
 signed char HexDigit(char c);
 
-#endif // BITCOIN_CRYPTO_HEX_BASE_H
+#endif // JIGOCOIN_CRYPTO_HEX_BASE_H

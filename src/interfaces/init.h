@@ -1,9 +1,9 @@
-// Copyright (c) 2021-present The Bitcoin Core developers
+// Copyright (c) 2021-present The Jigocoin Core developers
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
-#ifndef BITCOIN_INTERFACES_INIT_H
-#define BITCOIN_INTERFACES_INIT_H
+#ifndef JIGOCOIN_INTERFACES_INIT_H
+#define JIGOCOIN_INTERFACES_INIT_H
 
 #include <interfaces/chain.h>
 #include <interfaces/echo.h>
@@ -25,7 +25,7 @@ class Ipc;
 //! and get access to other interfaces (Node, Chain, Wallet, etc).
 //!
 //! There is a different Init interface implementation for each process
-//! (bitcoin-gui, bitcoin-node, bitcoin-wallet, bitcoind, bitcoin-qt) and each
+//! (jigocoin-gui, jigocoin-node, jigocoin-wallet, jigocoind, jigocoin-qt) and each
 //! implementation can implement the make methods for interfaces it supports.
 //! The default make methods all return null.
 class Init
@@ -78,4 +78,4 @@ std::unique_ptr<Init> MakeGuiInit(int argc, char* argv[]);
 std::unique_ptr<Init> MakeBasicInit(const char* exe_name, const char* process_argv0="");
 } // namespace interfaces
 
-#endif // BITCOIN_INTERFACES_INIT_H
+#endif // JIGOCOIN_INTERFACES_INIT_H

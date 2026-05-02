@@ -1,4 +1,4 @@
-// Copyright (c) 2021-present The Bitcoin Core developers
+// Copyright (c) 2021-present The Jigocoin Core developers
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
@@ -14,16 +14,14 @@
 
 #include <memory>
 
-using node::NodeContext;
-
 namespace init {
 namespace {
-const char* EXE_NAME = "bitcoind";
+const char* EXE_NAME = "jigocoin-qt";
 
-class BitcoindInit : public interfaces::Init
+class JigocoinQtInit : public interfaces::Init
 {
 public:
-    BitcoindInit(NodeContext& node) : m_node(node)
+    JigocoinQtInit()
     {
         InitContext(m_node);
         m_node.init = this;
@@ -37,14 +35,14 @@ public:
     }
     std::unique_ptr<interfaces::Echo> makeEcho() override { return interfaces::MakeEcho(); }
     const char* exeName() override { return EXE_NAME; }
-    NodeContext& m_node;
+    node::NodeContext m_node;
 };
 } // namespace
 } // namespace init
 
 namespace interfaces {
-std::unique_ptr<Init> MakeNodeInit(NodeContext& node, int argc, char* argv[], int& exit_status)
+std::unique_ptr<Init> MakeGuiInit(int argc, char* argv[])
 {
-    return std::make_unique<init::BitcoindInit>(node);
+    return std::make_unique<init::JigocoinQtInit>();
 }
 } // namespace interfaces

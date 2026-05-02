@@ -1,10 +1,10 @@
 // Copyright (c) 2009-2010 Satoshi Nakamoto
-// Copyright (c) 2009-present The Bitcoin Core developers
+// Copyright (c) 2009-present The Jigocoin Core developers
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
-#ifndef BITCOIN_UTIL_STDMUTEX_H
-#define BITCOIN_UTIL_STDMUTEX_H
+#ifndef JIGOCOIN_UTIL_STDMUTEX_H
+#define JIGOCOIN_UTIL_STDMUTEX_H
 
 // This header declares threading primitives compatible with Clang
 // Thread Safety Analysis and provides appropriate annotation macros.
@@ -42,4 +42,4 @@ public:
 
 using StdLockGuard = StdMutex::Guard; // TODO: remove, provided for backwards compat only
 
-#endif // BITCOIN_UTIL_STDMUTEX_H
+#endif // JIGOCOIN_UTIL_STDMUTEX_H

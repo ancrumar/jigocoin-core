@@ -1,10 +1,10 @@
 // Copyright (c) 2009-2010 Satoshi Nakamoto
-// Copyright (c) 2009-present The Bitcoin Core developers
+// Copyright (c) 2009-present The Jigocoin Core developers
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
-#ifndef BITCOIN_KERNEL_CHAINPARAMS_H
-#define BITCOIN_KERNEL_CHAINPARAMS_H
+#ifndef JIGOCOIN_KERNEL_CHAINPARAMS_H
+#define JIGOCOIN_KERNEL_CHAINPARAMS_H
 
 #include <consensus/params.h>
 #include <kernel/messagestartchars.h>
@@ -71,7 +71,7 @@ struct HeadersSyncParams {
 
 /**
  * CChainParams defines various tweakable parameters of a given instance of the
- * Bitcoin system.
+ * Jigocoin system.
  */
 class CChainParams
 {
@@ -184,4 +184,4 @@ protected:
 
 std::optional<ChainType> GetNetworkForMagic(const MessageStartChars& pchMessageStart);
 
-#endif // BITCOIN_KERNEL_CHAINPARAMS_H
+#endif // JIGOCOIN_KERNEL_CHAINPARAMS_H

@@ -1,10 +1,10 @@
 // Copyright (c) 2009-2010 Satoshi Nakamoto
-// Copyright (c) 2009-present The Bitcoin Core developers
+// Copyright (c) 2009-present The Jigocoin Core developers
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
-#ifndef BITCOIN_POLICY_POLICY_H
-#define BITCOIN_POLICY_POLICY_H
+#ifndef JIGOCOIN_POLICY_POLICY_H
+#define JIGOCOIN_POLICY_POLICY_H
 
 #include <consensus/amount.h>
 #include <consensus/consensus.h>
@@ -196,4 +196,4 @@ int64_t GetSigOpsAdjustedWeight(int64_t weight, int64_t sigop_cost, unsigned int
 
 static inline FeePerVSize ToFeePerVSize(FeePerWeight feerate) { return {feerate.fee, (feerate.size + WITNESS_SCALE_FACTOR - 1) / WITNESS_SCALE_FACTOR}; }
 
-#endif // BITCOIN_POLICY_POLICY_H
+#endif // JIGOCOIN_POLICY_POLICY_H

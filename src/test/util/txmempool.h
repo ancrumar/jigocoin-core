@@ -1,9 +1,9 @@
-// Copyright (c) 2022-present The Bitcoin Core developers
+// Copyright (c) 2022-present The Jigocoin Core developers
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
-#ifndef BITCOIN_TEST_UTIL_TXMEMPOOL_H
-#define BITCOIN_TEST_UTIL_TXMEMPOOL_H
+#ifndef JIGOCOIN_TEST_UTIL_TXMEMPOOL_H
+#define JIGOCOIN_TEST_UTIL_TXMEMPOOL_H
 
 #include <policy/packages.h>
 #include <txmempool.h>
@@ -80,4 +80,4 @@ void TryAddToMempool(CTxMemPool& tx_pool, const CTxMemPoolEntry& entry);
  */
 void MockMempoolMinFee(const CFeeRate& target_feerate, CTxMemPool& mempool);
 
-#endif // BITCOIN_TEST_UTIL_TXMEMPOOL_H
+#endif // JIGOCOIN_TEST_UTIL_TXMEMPOOL_H

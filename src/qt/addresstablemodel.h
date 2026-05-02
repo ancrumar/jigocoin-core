@@ -1,9 +1,9 @@
-// Copyright (c) 2011-present The Bitcoin Core developers
+// Copyright (c) 2011-present The Jigocoin Core developers
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
-#ifndef BITCOIN_QT_ADDRESSTABLEMODEL_H
-#define BITCOIN_QT_ADDRESSTABLEMODEL_H
+#ifndef JIGOCOIN_QT_ADDRESSTABLEMODEL_H
+#define JIGOCOIN_QT_ADDRESSTABLEMODEL_H
 
 #include <optional>
 
@@ -35,7 +35,7 @@ public:
 
     enum ColumnIndex {
         Label = 0,   /**< User specified label */
-        Address = 1  /**< Bitcoin address */
+        Address = 1  /**< Jigocoin address */
     };
 
     enum RoleIndex {
@@ -109,4 +109,4 @@ public Q_SLOTS:
     friend class AddressTablePriv;
 };
 
-#endif // BITCOIN_QT_ADDRESSTABLEMODEL_H
+#endif // JIGOCOIN_QT_ADDRESSTABLEMODEL_H

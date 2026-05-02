@@ -1,9 +1,9 @@
-// Copyright (c) 2022-present The Bitcoin Core developers
+// Copyright (c) 2022-present The Jigocoin Core developers
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
-#ifndef BITCOIN_KERNEL_CHAIN_H
-#define BITCOIN_KERNEL_CHAIN_H
+#ifndef JIGOCOIN_KERNEL_CHAIN_H
+#define JIGOCOIN_KERNEL_CHAIN_H
 
 #include <attributes.h>
 
@@ -39,4 +39,4 @@ interfaces::BlockInfo MakeBlockInfo(const CBlockIndex* block_index, const CBlock
 std::ostream& operator<<(std::ostream& os, const ChainstateRole& role);
 } // namespace kernel
 
-#endif // BITCOIN_KERNEL_CHAIN_H
+#endif // JIGOCOIN_KERNEL_CHAIN_H

@@ -2,8 +2,8 @@
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
-#ifndef BITCOIN_CUCKOOCACHE_H
-#define BITCOIN_CUCKOOCACHE_H
+#ifndef JIGOCOIN_CUCKOOCACHE_H
+#define JIGOCOIN_CUCKOOCACHE_H
 
 #include <util/fastrange.h>
 #include <util/overflow.h>
@@ -486,4 +486,4 @@ public:
 };
 } // namespace CuckooCache
 
-#endif // BITCOIN_CUCKOOCACHE_H
+#endif // JIGOCOIN_CUCKOOCACHE_H

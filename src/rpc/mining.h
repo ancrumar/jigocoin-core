@@ -1,11 +1,11 @@
-// Copyright (c) 2020-present The Bitcoin Core developers
+// Copyright (c) 2020-present The Jigocoin Core developers
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
-#ifndef BITCOIN_RPC_MINING_H
-#define BITCOIN_RPC_MINING_H
+#ifndef JIGOCOIN_RPC_MINING_H
+#define JIGOCOIN_RPC_MINING_H
 
 /** Default max iterations to try in RPC generatetodescriptor, generatetoaddress, and generateblock. */
 static const uint64_t DEFAULT_MAX_TRIES{1000000};
 
-#endif // BITCOIN_RPC_MINING_H
+#endif // JIGOCOIN_RPC_MINING_H

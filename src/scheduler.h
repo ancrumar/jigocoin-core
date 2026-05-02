@@ -1,9 +1,9 @@
-// Copyright (c) 2015-present The Bitcoin Core developers
+// Copyright (c) 2015-present The Jigocoin Core developers
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
-#ifndef BITCOIN_SCHEDULER_H
-#define BITCOIN_SCHEDULER_H
+#ifndef JIGOCOIN_SCHEDULER_H
+#define JIGOCOIN_SCHEDULER_H
 
 #include <attributes.h>
 #include <sync.h>
@@ -156,4 +156,4 @@ public:
     size_t size() override EXCLUSIVE_LOCKS_REQUIRED(!m_callbacks_mutex);
 };
 
-#endif // BITCOIN_SCHEDULER_H
+#endif // JIGOCOIN_SCHEDULER_H

@@ -1,9 +1,9 @@
-// Copyright (c) 2023-present The Bitcoin Core developers
+// Copyright (c) 2023-present The Jigocoin Core developers
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
-#ifndef BITCOIN_UTIL_INSERT_H
-#define BITCOIN_UTIL_INSERT_H
+#ifndef JIGOCOIN_UTIL_INSERT_H
+#define JIGOCOIN_UTIL_INSERT_H
 
 #include <set>
 
@@ -26,4 +26,4 @@ inline void insert(std::set<TsetT, Compare>& dst, const Tsrc& src) {
 
 } // namespace util
 
-#endif // BITCOIN_UTIL_INSERT_H
+#endif // JIGOCOIN_UTIL_INSERT_H

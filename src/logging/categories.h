@@ -1,9 +1,9 @@
-// Copyright (c) The Bitcoin Core developers
+// Copyright (c) The Jigocoin Core developers
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
-#ifndef BITCOIN_LOGGING_CATEGORIES_H
-#define BITCOIN_LOGGING_CATEGORIES_H
+#ifndef JIGOCOIN_LOGGING_CATEGORIES_H
+#define JIGOCOIN_LOGGING_CATEGORIES_H
 
 #include <cstdint>
 
@@ -51,4 +51,4 @@ enum LogFlags : CategoryMask {
 
 } // namespace BCLog
 
-#endif // BITCOIN_LOGGING_CATEGORIES_H
+#endif // JIGOCOIN_LOGGING_CATEGORIES_H

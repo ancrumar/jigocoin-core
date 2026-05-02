@@ -1,9 +1,9 @@
-// Copyright (c) 2023-present The Bitcoin Core developers
+// Copyright (c) 2023-present The Jigocoin Core developers
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or https://opensource.org/license/mit.
 
-#ifndef BITCOIN_PRIMITIVES_TRANSACTION_IDENTIFIER_H
-#define BITCOIN_PRIMITIVES_TRANSACTION_IDENTIFIER_H
+#ifndef JIGOCOIN_PRIMITIVES_TRANSACTION_IDENTIFIER_H
+#define JIGOCOIN_PRIMITIVES_TRANSACTION_IDENTIFIER_H
 
 #include <attributes.h>
 #include <uint256.h>
@@ -94,4 +94,4 @@ public:
     }
 };
 
-#endif // BITCOIN_PRIMITIVES_TRANSACTION_IDENTIFIER_H
+#endif // JIGOCOIN_PRIMITIVES_TRANSACTION_IDENTIFIER_H

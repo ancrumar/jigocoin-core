@@ -1,9 +1,9 @@
-// Copyright (c) 2021-present The Bitcoin Core developers
+// Copyright (c) 2021-present The Jigocoin Core developers
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
-#ifndef BITCOIN_NETGROUP_H
-#define BITCOIN_NETGROUP_H
+#ifndef JIGOCOIN_NETGROUP_H
+#define JIGOCOIN_NETGROUP_H
 
 #include <netaddress.h>
 #include <uint256.h>
@@ -101,4 +101,4 @@ private:
     }
 };
 
-#endif // BITCOIN_NETGROUP_H
+#endif // JIGOCOIN_NETGROUP_H

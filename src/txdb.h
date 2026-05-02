@@ -1,10 +1,10 @@
 // Copyright (c) 2009-2010 Satoshi Nakamoto
-// Copyright (c) 2009-present The Bitcoin Core developers
+// Copyright (c) 2009-present The Jigocoin Core developers
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
-#ifndef BITCOIN_TXDB_H
-#define BITCOIN_TXDB_H
+#ifndef JIGOCOIN_TXDB_H
+#define JIGOCOIN_TXDB_H
 
 #include <coins.h>
 #include <dbwrapper.h>
@@ -55,4 +55,4 @@ public:
     void ResizeCache(size_t new_cache_size) EXCLUSIVE_LOCKS_REQUIRED(cs_main);
 };
 
-#endif // BITCOIN_TXDB_H
+#endif // JIGOCOIN_TXDB_H

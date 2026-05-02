@@ -1,10 +1,10 @@
-// Copyright (c) 2022-present The Bitcoin Core developers
+// Copyright (c) 2022-present The Jigocoin Core developers
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
-#define BITCOINKERNEL_BUILD
+#define JIGOCOINKERNEL_BUILD
 
-#include <kernel/bitcoinkernel.h>
+#include <kernel/jigocoinkernel.h>
 
 #include <chain.h>
 #include <coins.h>
@@ -53,7 +53,7 @@
 using kernel::ChainstateRole;
 using util::ImmediateTaskRunner;
 
-// Define G_TRANSLATION_FUN symbol in libbitcoinkernel library so users of the
+// Define G_TRANSLATION_FUN symbol in libjigocoinkernel library so users of the
 // library aren't required to export this symbol
 extern const TranslateFn G_TRANSLATION_FUN{nullptr};
 

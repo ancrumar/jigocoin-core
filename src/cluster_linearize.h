@@ -1,9 +1,9 @@
-// Copyright (c) The Bitcoin Core developers
+// Copyright (c) The Jigocoin Core developers
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
-#ifndef BITCOIN_CLUSTER_LINEARIZE_H
-#define BITCOIN_CLUSTER_LINEARIZE_H
+#ifndef JIGOCOIN_CLUSTER_LINEARIZE_H
+#define JIGOCOIN_CLUSTER_LINEARIZE_H
 
 #include <algorithm>
 #include <cstdint>
@@ -2042,4 +2042,4 @@ void PostLinearize(const DepGraph<SetType>& depgraph, std::span<DepGraphIndex> l
 
 } // namespace cluster_linearize
 
-#endif // BITCOIN_CLUSTER_LINEARIZE_H
+#endif // JIGOCOIN_CLUSTER_LINEARIZE_H

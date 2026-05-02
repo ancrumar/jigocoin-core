@@ -1,9 +1,9 @@
-// Copyright (c) 2025 The Bitcoin Core developers
+// Copyright (c) 2025 The Jigocoin Core developers
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
-#ifndef BITCOIN_INTERFACES_RPC_H
-#define BITCOIN_INTERFACES_RPC_H
+#ifndef JIGOCOIN_INTERFACES_RPC_H
+#define JIGOCOIN_INTERFACES_RPC_H
 
 #include <memory>
 #include <string>
@@ -28,4 +28,4 @@ std::unique_ptr<Rpc> MakeRpc(node::NodeContext& node);
 
 } // namespace interfaces
 
-#endif // BITCOIN_INTERFACES_RPC_H
+#endif // JIGOCOIN_INTERFACES_RPC_H

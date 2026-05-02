@@ -1,11 +1,11 @@
 // Copyright (c) 2009-2010 Satoshi Nakamoto
-// Copyright (c) 2009-present The Bitcoin Core developers
+// Copyright (c) 2009-present The Jigocoin Core developers
 // Copyright (c) 2017 The Zcash developers
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
-#ifndef BITCOIN_KEY_H
-#define BITCOIN_KEY_H
+#ifndef JIGOCOIN_KEY_H
+#define JIGOCOIN_KEY_H
 
 #include <musig.h>
 #include <pubkey.h>
@@ -329,4 +329,4 @@ public:
     ~ECC_Context();
 };
 
-#endif // BITCOIN_KEY_H
+#endif // JIGOCOIN_KEY_H

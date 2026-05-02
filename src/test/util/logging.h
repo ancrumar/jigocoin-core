@@ -1,9 +1,9 @@
-// Copyright (c) 2019-present The Bitcoin Core developers
+// Copyright (c) 2019-present The Jigocoin Core developers
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
-#ifndef BITCOIN_TEST_UTIL_LOGGING_H
-#define BITCOIN_TEST_UTIL_LOGGING_H
+#ifndef JIGOCOIN_TEST_UTIL_LOGGING_H
+#define JIGOCOIN_TEST_UTIL_LOGGING_H
 
 #include <util/macros.h>
 
@@ -41,4 +41,4 @@ private:
 
 #define ASSERT_DEBUG_LOG(message) DebugLogHelper UNIQUE_NAME(debugloghelper)(message)
 
-#endif // BITCOIN_TEST_UTIL_LOGGING_H
+#endif // JIGOCOIN_TEST_UTIL_LOGGING_H

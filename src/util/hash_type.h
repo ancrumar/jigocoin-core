@@ -1,9 +1,9 @@
-// Copyright (c) 2020-present The Bitcoin Core developers
+// Copyright (c) 2020-present The Jigocoin Core developers
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
-#ifndef BITCOIN_UTIL_HASH_TYPE_H
-#define BITCOIN_UTIL_HASH_TYPE_H
+#ifndef JIGOCOIN_UTIL_HASH_TYPE_H
+#define JIGOCOIN_UTIL_HASH_TYPE_H
 
 template <typename HashType>
 class BaseHash
@@ -64,4 +64,4 @@ public:
     const unsigned char* data() const { return m_hash.data(); }
 };
 
-#endif // BITCOIN_UTIL_HASH_TYPE_H
+#endif // JIGOCOIN_UTIL_HASH_TYPE_H

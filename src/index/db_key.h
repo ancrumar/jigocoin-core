@@ -1,9 +1,9 @@
-// Copyright (c) 2025-present The Bitcoin Core developers
+// Copyright (c) 2025-present The Jigocoin Core developers
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
-#ifndef BITCOIN_INDEX_DB_KEY_H
-#define BITCOIN_INDEX_DB_KEY_H
+#ifndef JIGOCOIN_INDEX_DB_KEY_H
+#define JIGOCOIN_INDEX_DB_KEY_H
 
 #include <dbwrapper.h>
 #include <interfaces/types.h>
@@ -113,4 +113,4 @@ static bool LookUpOne(const CDBWrapper& db, const interfaces::BlockRef& block, D
 }
 } // namespace index_util
 
-#endif // BITCOIN_INDEX_DB_KEY_H
+#endif // JIGOCOIN_INDEX_DB_KEY_H

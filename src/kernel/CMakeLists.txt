@@ -1,15 +1,15 @@
-# Copyright (c) 2024-present The Bitcoin Core developers
+# Copyright (c) 2024-present The Jigocoin Core developers
 # Distributed under the MIT software license, see the accompanying
 # file COPYING or https://opensource.org/license/mit/.
 
 include(GNUInstallDirs)
 
-# TODO: libbitcoinkernel is a work in progress consensus engine
+# TODO: libjigocoinkernel is a work in progress consensus engine
 #       library, as more and more modules are decoupled from the
 #       consensus engine, this list will shrink to only those
 #       which are absolutely necessary.
-add_library(bitcoinkernel
-  bitcoinkernel.cpp
+add_library(jigocoinkernel
+  jigocoinkernel.cpp
   chain.cpp
   checks.cpp
   chainparams.cpp
@@ -77,8 +77,8 @@ add_library(bitcoinkernel
   ../validation.cpp
   ../validationinterface.cpp
   ../versionbits.cpp
-  $<TARGET_OBJECTS:bitcoin_clientversion>
-  $<TARGET_OBJECTS:bitcoin_crypto>
+  $<TARGET_OBJECTS:jigocoin_clientversion>
+  $<TARGET_OBJECTS:jigocoin_crypto>
   $<TARGET_OBJECTS:leveldb>
   $<TARGET_OBJECTS:crc32c>
 )
@@ -92,12 +92,12 @@ if(NOT MSVC)
 endif()
 
 # Also manually apply the warnings to the kernel's internal dependencies
-target_link_libraries(bitcoin_clientversion PRIVATE kernel_warn_interface)
-target_link_libraries(bitcoin_crypto PRIVATE kernel_warn_interface)
+target_link_libraries(jigocoin_clientversion PRIVATE kernel_warn_interface)
+target_link_libraries(jigocoin_crypto PRIVATE kernel_warn_interface)
 target_link_libraries(leveldb PRIVATE kernel_warn_interface)
 target_link_libraries(crc32c PRIVATE kernel_warn_interface)
 
-target_link_libraries(bitcoinkernel
+target_link_libraries(jigocoinkernel
   PRIVATE
     core_interface
     kernel_warn_interface
@@ -107,30 +107,30 @@ target_link_libraries(bitcoinkernel
     Boost::headers
 )
 
-target_include_directories(bitcoinkernel PRIVATE $<BUILD_INTERFACE:${PROJECT_SOURCE_DIR}/src/leveldb/include>)
+target_include_directories(jigocoinkernel PRIVATE $<BUILD_INTERFACE:${PROJECT_SOURCE_DIR}/src/leveldb/include>)
 
-# Add a convenience libbitcoinkernel target as a synonym for bitcoinkernel.
-add_custom_target(libbitcoinkernel)
-add_dependencies(libbitcoinkernel bitcoinkernel)
+# Add a convenience libjigocoinkernel target as a synonym for jigocoinkernel.
+add_custom_target(libjigocoinkernel)
+add_dependencies(libjigocoinkernel jigocoinkernel)
 
-get_target_property(bitcoinkernel_type bitcoinkernel TYPE)
-if(bitcoinkernel_type STREQUAL "STATIC_LIBRARY")
-  target_compile_definitions(bitcoinkernel PUBLIC BITCOINKERNEL_STATIC)
+get_target_property(jigocoinkernel_type jigocoinkernel TYPE)
+if(jigocoinkernel_type STREQUAL "STATIC_LIBRARY")
+  target_compile_definitions(jigocoinkernel PUBLIC JIGOCOINKERNEL_STATIC)
 endif()
 
-configure_file(${PROJECT_SOURCE_DIR}/libbitcoinkernel.pc.in ${PROJECT_BINARY_DIR}/libbitcoinkernel.pc @ONLY)
-install(FILES ${PROJECT_BINARY_DIR}/libbitcoinkernel.pc DESTINATION "${CMAKE_INSTALL_LIBDIR}/pkgconfig" COMPONENT libbitcoinkernel)
+configure_file(${PROJECT_SOURCE_DIR}/libjigocoinkernel.pc.in ${PROJECT_BINARY_DIR}/libjigocoinkernel.pc @ONLY)
+install(FILES ${PROJECT_BINARY_DIR}/libjigocoinkernel.pc DESTINATION "${CMAKE_INSTALL_LIBDIR}/pkgconfig" COMPONENT libjigocoinkernel)
 
-install(TARGETS bitcoinkernel
+install(TARGETS jigocoinkernel
   RUNTIME
     DESTINATION ${CMAKE_INSTALL_BINDIR}
-    COMPONENT libbitcoinkernel
+    COMPONENT libjigocoinkernel
   LIBRARY
     DESTINATION ${CMAKE_INSTALL_LIBDIR}
-    COMPONENT libbitcoinkernel
+    COMPONENT libjigocoinkernel
   ARCHIVE
     DESTINATION ${CMAKE_INSTALL_LIBDIR}
-    COMPONENT libbitcoinkernel
+    COMPONENT libjigocoinkernel
 )
 
-install(FILES bitcoinkernel.h DESTINATION ${CMAKE_INSTALL_INCLUDEDIR} COMPONENT libbitcoinkernel)
+install(FILES jigocoinkernel.h DESTINATION ${CMAKE_INSTALL_INCLUDEDIR} COMPONENT libjigocoinkernel)

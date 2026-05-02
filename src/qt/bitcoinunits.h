@@ -1,9 +1,9 @@
-// Copyright (c) 2011-present The Bitcoin Core developers
+// Copyright (c) 2011-present The Jigocoin Core developers
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
-#ifndef BITCOIN_QT_BITCOINUNITS_H
-#define BITCOIN_QT_BITCOINUNITS_H
+#ifndef JIGOCOIN_QT_JIGOCOINUNITS_H
+#define JIGOCOIN_QT_JIGOCOINUNITS_H
 
 #include <consensus/amount.h>
 
@@ -26,18 +26,18 @@
 #define THIN_SP_UTF8 REAL_THIN_SP_UTF8
 #define THIN_SP_HTML HTML_HACK_SP
 
-/** Bitcoin unit definitions. Encapsulates parsing and formatting
+/** Jigocoin unit definitions. Encapsulates parsing and formatting
    and serves as list model for drop-down selection boxes.
 */
-class BitcoinUnits: public QAbstractListModel
+class JigocoinUnits: public QAbstractListModel
 {
     Q_OBJECT
 
 public:
-    explicit BitcoinUnits(QObject *parent);
+    explicit JigocoinUnits(QObject *parent);
 
-    /** Bitcoin units.
-      @note Source: https://en.bitcoin.it/wiki/Units . Please add only sensible ones
+    /** Jigocoin units.
+      @note Source: https://en.jigocoin.it/wiki/Units . Please add only sensible ones
      */
     enum class Unit {
         BTC,
@@ -108,9 +108,9 @@ public:
 private:
     QList<Unit> unitlist;
 };
-typedef BitcoinUnits::Unit BitcoinUnit;
+typedef JigocoinUnits::Unit JigocoinUnit;
 
-QDataStream& operator<<(QDataStream& out, const BitcoinUnit& unit);
-QDataStream& operator>>(QDataStream& in, BitcoinUnit& unit);
+QDataStream& operator<<(QDataStream& out, const JigocoinUnit& unit);
+QDataStream& operator>>(QDataStream& in, JigocoinUnit& unit);
 
-#endif // BITCOIN_QT_BITCOINUNITS_H
+#endif // JIGOCOIN_QT_JIGOCOINUNITS_H

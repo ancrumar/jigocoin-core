@@ -54,13 +54,13 @@
         <translation type="unfinished">V&amp;ali</translation>
     </message>
     <message>
-        <source>These are your Bitcoin addresses for sending payments. Always check the amount and the receiving address before sending coins.</source>
-        <translation type="unfinished">Need on sinu Bitcoin aadressid maksete saatmiseks. Ennem müntide saatmist kontrolli alati summat ja makse saaja aadressi.</translation>
+        <source>These are your Jigocoin addresses for sending payments. Always check the amount and the receiving address before sending coins.</source>
+        <translation type="unfinished">Need on sinu Jigocoin aadressid maksete saatmiseks. Ennem müntide saatmist kontrolli alati summat ja makse saaja aadressi.</translation>
     </message>
     <message>
-        <source>These are your Bitcoin addresses for receiving payments. Use the 'Create new receiving address' button in the receive tab to create new addresses.
+        <source>These are your Jigocoin addresses for receiving payments. Use the 'Create new receiving address' button in the receive tab to create new addresses.
 Signing is only possible with addresses of the type 'legacy'.</source>
-        <translation type="unfinished">Need on sinu Bitcoin aadressid makse vastuvõtuks.Kasuta ‘Loo uus vastuvõttu aadress’ nuppu vastuvõtmise vahekaardis, et luua uus aadress. Allkirjastamine on võimalik ainult 'pärand' tüüpi aadressidega.</translation>
+        <translation type="unfinished">Need on sinu Jigocoin aadressid makse vastuvõtuks.Kasuta ‘Loo uus vastuvõttu aadress’ nuppu vastuvõtmise vahekaardis, et luua uus aadress. Allkirjastamine on võimalik ainult 'pärand' tüüpi aadressidega.</translation>
     </message>
     <message>
         <source>&amp;Copy Address</source>
@@ -151,8 +151,8 @@ Signing is only possible with addresses of the type 'legacy'.</source>
         <translation type="unfinished">Kinnita rahakoti krüpteerimine.</translation>
     </message>
     <message>
-        <source>Warning: If you encrypt your wallet and lose your passphrase, you will &lt;b&gt;LOSE ALL OF YOUR BITCOINS&lt;/b&gt;!</source>
-        <translation type="unfinished">Hoiatus:Kui sa krüpteerid oma rahakoti ja kaotad salafraasi, siis sa&lt;b&gt;KAOTAD OMA BITCOINID&lt;/b&gt;!</translation>
+        <source>Warning: If you encrypt your wallet and lose your passphrase, you will &lt;b&gt;LOSE ALL OF YOUR JIGOCOINS&lt;/b&gt;!</source>
+        <translation type="unfinished">Hoiatus:Kui sa krüpteerid oma rahakoti ja kaotad salafraasi, siis sa&lt;b&gt;KAOTAD OMA JIGOCOINID&lt;/b&gt;!</translation>
     </message>
     <message>
         <source>Are you sure you wish to encrypt your wallet?</source>
@@ -179,8 +179,8 @@ Signing is only possible with addresses of the type 'legacy'.</source>
         <translation type="unfinished">Tagasi</translation>
     </message>
     <message>
-        <source>Remember that encrypting your wallet cannot fully protect your bitcoins from being stolen by malware infecting your computer.</source>
-        <translation type="unfinished">Pea meeles, et rahakoti krüpteerimine ei välista bitcoinide vargust, kui sinu arvuti on nakatunud pahavaraga.</translation>
+        <source>Remember that encrypting your wallet cannot fully protect your jigocoins from being stolen by malware infecting your computer.</source>
+        <translation type="unfinished">Pea meeles, et rahakoti krüpteerimine ei välista jigocoinide vargust, kui sinu arvuti on nakatunud pahavaraga.</translation>
     </message>
     <message>
         <source>Wallet to be encrypted</source>
@@ -243,7 +243,7 @@ Signing is only possible with addresses of the type 'legacy'.</source>
     </message>
 </context>
 <context>
-    <name>BitcoinApplication</name>
+    <name>JigocoinApplication</name>
     <message>
         <source>Internal error</source>
         <translation type="unfinished">Süsteemisisene Viga</translation>
@@ -321,7 +321,7 @@ Signing is only possible with addresses of the type 'legacy'.</source>
     </message>
     </context>
 <context>
-    <name>BitcoinGUI</name>
+    <name>JigocoinGUI</name>
     <message>
         <source>&amp;Overview</source>
         <translation type="unfinished">&amp;Ülevaade</translation>
@@ -375,8 +375,8 @@ Signing is only possible with addresses of the type 'legacy'.</source>
         <translation type="unfinished">Rahakott:</translation>
     </message>
     <message>
-        <source>Send coins to a Bitcoin address</source>
-        <translation type="unfinished">Saada münte Bitcoini aadressile</translation>
+        <source>Send coins to a Jigocoin address</source>
+        <translation type="unfinished">Saada münte Jigocoini aadressile</translation>
     </message>
     <message>
         <source>Backup wallet to another location</source>
@@ -419,16 +419,16 @@ Signing is only possible with addresses of the type 'legacy'.</source>
         <translation type="unfinished">Allkirjuta &amp;sõnum...</translation>
     </message>
     <message>
-        <source>Sign messages with your Bitcoin addresses to prove you own them</source>
-        <translation type="unfinished">Omandi tõestamiseks allkirjasta sõnumid oma Bitcoini aadressiga</translation>
+        <source>Sign messages with your Jigocoin addresses to prove you own them</source>
+        <translation type="unfinished">Omandi tõestamiseks allkirjasta sõnumid oma Jigocoini aadressiga</translation>
     </message>
     <message>
         <source>&amp;Verify message…</source>
         <translation type="unfinished">&amp;Kinnita sõnum...</translation>
     </message>
     <message>
-        <source>Verify messages to ensure they were signed with specified Bitcoin addresses</source>
-        <translation type="unfinished">Kinnita sõnumid kindlustamaks et need allkirjastati määratud Bitcoini aadressiga</translation>
+        <source>Verify messages to ensure they were signed with specified Jigocoin addresses</source>
+        <translation type="unfinished">Kinnita sõnumid kindlustamaks et need allkirjastati määratud Jigocoini aadressiga</translation>
     </message>
     <message>
         <source>Open &amp;URI…</source>
@@ -467,8 +467,8 @@ Signing is only possible with addresses of the type 'legacy'.</source>
         <translation type="unfinished">Sünkroniseerin võrguga...</translation>
     </message>
     <message>
-        <source>Request payments (generates QR codes and bitcoin: URIs)</source>
-        <translation type="unfinished">Loo maksepäring (genereerib QR koodid ja bitcoini: URId)</translation>
+        <source>Request payments (generates QR codes and jigocoin: URIs)</source>
+        <translation type="unfinished">Loo maksepäring (genereerib QR koodid ja jigocoini: URId)</translation>
     </message>
     <message>
         <source>&amp;Command-line options</source>
@@ -556,7 +556,7 @@ Signing is only possible with addresses of the type 'legacy'.</source>
         <translation type="unfinished">&amp;Peida</translation>
     </message>
     <message numerus="yes">
-        <source>%n active connection(s) to Bitcoin network.</source>
+        <source>%n active connection(s) to Jigocoin network.</source>
         <extracomment>A substring of the tooltip.</extracomment>
         <translation type="unfinished">
             <numerusform />
@@ -765,8 +765,8 @@ Signing is only possible with addresses of the type 'legacy'.</source>
         <translation type="unfinished">Muuda saatvat aadressi</translation>
     </message>
     <message>
-        <source>The entered address "%1" is not a valid Bitcoin address.</source>
-        <translation type="unfinished">Sisestatud aadress "%1" ei ole korrektne Bitcoin aadress.</translation>
+        <source>The entered address "%1" is not a valid Jigocoin address.</source>
+        <translation type="unfinished">Sisestatud aadress "%1" ei ole korrektne Jigocoin aadress.</translation>
     </message>
     <message>
         <source>Could not unlock wallet.</source>
@@ -972,8 +972,8 @@ Signing is only possible with addresses of the type 'legacy'.</source>
         <translation type="unfinished">Vorm</translation>
     </message>
     <message>
-        <source>The displayed information may be out of date. Your wallet automatically synchronizes with the Bitcoin network after a connection is established, but this process has not completed yet.</source>
-        <translation type="unfinished">Kuvatav info ei pruugi olla ajakohane. Ühenduse loomisel süngitakse sinu rahakott automaatselt Bitcoin võrgustikuga, kuid see toiming on hetkel lõpetamata.</translation>
+        <source>The displayed information may be out of date. Your wallet automatically synchronizes with the Jigocoin network after a connection is established, but this process has not completed yet.</source>
+        <translation type="unfinished">Kuvatav info ei pruugi olla ajakohane. Ühenduse loomisel süngitakse sinu rahakott automaatselt Jigocoin võrgustikuga, kuid see toiming on hetkel lõpetamata.</translation>
     </message>
     <message>
         <source>Pending:</source>
@@ -1028,8 +1028,8 @@ Signing is only possible with addresses of the type 'legacy'.</source>
         <translation type="unfinished">Maksepäringu tõrge</translation>
     </message>
     <message>
-        <source>Cannot start bitcoin: click-to-pay handler</source>
-        <translation type="unfinished">Bitcoin ei käivitu: vajuta-maksa toiming</translation>
+        <source>Cannot start jigocoin: click-to-pay handler</source>
+        <translation type="unfinished">Jigocoin ei käivitu: vajuta-maksa toiming</translation>
     </message>
     <message>
         <source>URI handling</source>
@@ -1428,8 +1428,8 @@ Signing is only possible with addresses of the type 'legacy'.</source>
         </translation>
     </message>
     <message>
-        <source>Warning: Invalid Bitcoin address</source>
-        <translation type="unfinished">Hoiatus: Ebakorrektne Bitcoin aadress</translation>
+        <source>Warning: Invalid Jigocoin address</source>
+        <translation type="unfinished">Hoiatus: Ebakorrektne Jigocoin aadress</translation>
     </message>
     <message>
         <source>(no label)</source>
@@ -1478,8 +1478,8 @@ Signing is only possible with addresses of the type 'legacy'.</source>
         <translation type="unfinished">&amp;Allkirjastamise teade</translation>
     </message>
     <message>
-        <source>The Bitcoin address to sign the message with</source>
-        <translation type="unfinished">Bitcoin aadress millega sõnum allkirjastada</translation>
+        <source>The Jigocoin address to sign the message with</source>
+        <translation type="unfinished">Jigocoin aadress millega sõnum allkirjastada</translation>
     </message>
     <message>
         <source>Choose previously used address</source>
@@ -1498,8 +1498,8 @@ Signing is only possible with addresses of the type 'legacy'.</source>
         <translation type="unfinished">Allkiri</translation>
     </message>
     <message>
-        <source>Sign the message to prove you own this Bitcoin address</source>
-        <translation type="unfinished">Allkirjasta sõnum Bitcoini aadressi sulle kuulumise tõestamiseks</translation>
+        <source>Sign the message to prove you own this Jigocoin address</source>
+        <translation type="unfinished">Allkirjasta sõnum Jigocoini aadressi sulle kuulumise tõestamiseks</translation>
     </message>
     <message>
         <source>Sign &amp;Message</source>
@@ -1518,12 +1518,12 @@ Signing is only possible with addresses of the type 'legacy'.</source>
         <translation type="unfinished">&amp;Kinnita Sõnum</translation>
     </message>
     <message>
-        <source>The Bitcoin address the message was signed with</source>
-        <translation type="unfinished">Bitcoin aadress millega sõnum on allkirjastatud</translation>
+        <source>The Jigocoin address the message was signed with</source>
+        <translation type="unfinished">Jigocoin aadress millega sõnum on allkirjastatud</translation>
     </message>
     <message>
-        <source>Verify the message to ensure it was signed with the specified Bitcoin address</source>
-        <translation type="unfinished">Kinnita sõnum tõestamaks selle allkirjastatust määratud Bitcoini aadressiga.</translation>
+        <source>Verify the message to ensure it was signed with the specified Jigocoin address</source>
+        <translation type="unfinished">Kinnita sõnum tõestamaks selle allkirjastatust määratud Jigocoini aadressiga.</translation>
     </message>
     <message>
         <source>Verify &amp;Message</source>
@@ -1894,7 +1894,7 @@ Signing is only possible with addresses of the type 'legacy'.</source>
     </message>
     </context>
 <context>
-    <name>bitcoin-core</name>
+    <name>jigocoin-core</name>
     <message>
         <source>This is a pre-release test build - use at your own risk - do not use for mining or merchant applications</source>
         <translation type="unfinished">See on test-versioon - kasutamine omal riisikol - ära kasuta mining'uks ega kaupmeeste programmides</translation>

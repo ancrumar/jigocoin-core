@@ -1,10 +1,10 @@
-// Copyright (c) 2019-present The Bitcoin Core developers
+// Copyright (c) 2019-present The Jigocoin Core developers
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
 #include <common/settings.h>
 
-#include <bitcoin-build-config.h> // IWYU pragma: keep
+#include <jigocoin-build-config.h> // IWYU pragma: keep
 
 #include <tinyformat.h>
 #include <univalue.h>

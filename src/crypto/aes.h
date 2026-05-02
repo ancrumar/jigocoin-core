@@ -1,11 +1,11 @@
-// Copyright (c) 2015-present The Bitcoin Core developers
+// Copyright (c) 2015-present The Jigocoin Core developers
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 //
 // C++ wrapper around ctaes, a constant-time AES implementation
 
-#ifndef BITCOIN_CRYPTO_AES_H
-#define BITCOIN_CRYPTO_AES_H
+#ifndef JIGOCOIN_CRYPTO_AES_H
+#define JIGOCOIN_CRYPTO_AES_H
 
 #include <support/allocators/secure.h>
 extern "C" {
@@ -69,4 +69,4 @@ private:
     unsigned char *iv;
 };
 
-#endif // BITCOIN_CRYPTO_AES_H
+#endif // JIGOCOIN_CRYPTO_AES_H

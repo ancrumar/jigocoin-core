@@ -1,9 +1,9 @@
-// Copyright (c) 2009-present The Bitcoin Core developers
+// Copyright (c) 2009-present The Jigocoin Core developers
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
-#ifndef BITCOIN_NETBASE_H
-#define BITCOIN_NETBASE_H
+#ifndef JIGOCOIN_NETBASE_H
+#define JIGOCOIN_NETBASE_H
 
 #include <compat/compat.h>
 #include <netaddress.h>
@@ -367,4 +367,4 @@ CService MaybeFlipIPv6toCJDNS(const CService& service);
 /** Get the bind address for a socket as CService. */
 CService GetBindAddress(const Sock& sock);
 
-#endif // BITCOIN_NETBASE_H
+#endif // JIGOCOIN_NETBASE_H

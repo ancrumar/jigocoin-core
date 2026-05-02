@@ -1,9 +1,9 @@
-# Copyright (c) 2023-present The Bitcoin Core developers
+# Copyright (c) 2023-present The Jigocoin Core developers
 # Distributed under the MIT software license, see the accompanying
 # file COPYING or https://opensource.org/license/mit/.
 
-# Wallet functionality used by bitcoind and bitcoin-wallet executables.
-add_library(bitcoin_wallet STATIC EXCLUDE_FROM_ALL
+# Wallet functionality used by jigocoind and jigocoin-wallet executables.
+add_library(jigocoin_wallet STATIC EXCLUDE_FROM_ALL
   coincontrol.cpp
   coinselection.cpp
   context.cpp
@@ -34,10 +34,10 @@ add_library(bitcoin_wallet STATIC EXCLUDE_FROM_ALL
   walletdb.cpp
   walletutil.cpp
 )
-target_link_libraries(bitcoin_wallet
+target_link_libraries(jigocoin_wallet
   PRIVATE
     core_interface
-    bitcoin_common
+    jigocoin_common
     SQLite3::SQLite3
     univalue
     Boost::headers

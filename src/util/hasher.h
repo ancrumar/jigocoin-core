@@ -1,9 +1,9 @@
-// Copyright (c) 2019-present The Bitcoin Core developers
+// Copyright (c) 2019-present The Jigocoin Core developers
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
-#ifndef BITCOIN_UTIL_HASHER_H
-#define BITCOIN_UTIL_HASHER_H
+#ifndef JIGOCOIN_UTIL_HASHER_H
+#define JIGOCOIN_UTIL_HASHER_H
 
 #include <crypto/common.h>
 #include <crypto/siphash.h>
@@ -117,4 +117,4 @@ public:
     size_t operator()(const std::span<const unsigned char>& script) const;
 };
 
-#endif // BITCOIN_UTIL_HASHER_H
+#endif // JIGOCOIN_UTIL_HASHER_H

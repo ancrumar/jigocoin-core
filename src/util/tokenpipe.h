@@ -1,9 +1,9 @@
-// Copyright (c) 2021-present The Bitcoin Core developers
+// Copyright (c) 2021-present The Jigocoin Core developers
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
-#ifndef BITCOIN_UTIL_TOKENPIPE_H
-#define BITCOIN_UTIL_TOKENPIPE_H
+#ifndef JIGOCOIN_UTIL_TOKENPIPE_H
+#define JIGOCOIN_UTIL_TOKENPIPE_H
 
 #ifndef WIN32
 
@@ -124,4 +124,4 @@ public:
 
 #endif // WIN32
 
-#endif // BITCOIN_UTIL_TOKENPIPE_H
+#endif // JIGOCOIN_UTIL_TOKENPIPE_H

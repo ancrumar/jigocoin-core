@@ -1,9 +1,9 @@
-// Copyright (c) 2012-present The Bitcoin Core developers
+// Copyright (c) 2012-present The Jigocoin Core developers
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
-#ifndef BITCOIN_COMMON_BLOOM_H
-#define BITCOIN_COMMON_BLOOM_H
+#ifndef JIGOCOIN_COMMON_BLOOM_H
+#define JIGOCOIN_COMMON_BLOOM_H
 
 #include <serialize.h>
 #include <span.h>
@@ -124,4 +124,4 @@ private:
     int nHashFuncs;
 };
 
-#endif // BITCOIN_COMMON_BLOOM_H
+#endif // JIGOCOIN_COMMON_BLOOM_H
