@@ -303,4 +303,5 @@ This software is based on Bitcoin Core.
 
 For advanced networking details, see:
 
-* `doc/jigocoin-networking.md`
+- `doc/jigocoin-networking.md`
+- `doc/jigocoin-seed-node.md`
