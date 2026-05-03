@@ -206,6 +206,42 @@ Check:
 
 ---
 
+## Node connects but does not synchronize (stuck at block 0)
+
+If peers appear in `getpeerinfo` but the node remains stuck at **block 0**, the cause is usually **P2P transport version incompatibility**.
+
+Modern Bitcoin-derived nodes may attempt to use **P2P V2 transport**, while Jigocoin currently requires **V1 transport**.
+
+Add this line to your configuration file:
+
+```ini
+v2transport=0
+```
+
+Example:
+
+```ini
+server=1
+daemon=1
+
+rpcuser=jigouser
+rpcpassword=strongpassword
+
+rpcport=30462
+port=19335
+
+v2transport=0
+
+addnode=34.10.226.240:19335
+```
+
+After adding this option, restart the node.
+
+This resolves the most common synchronization failure in new installations.
+
+
+---
+
 ## RPC connection problems
 
 Verify:
@@ -260,3 +296,11 @@ See:
 COPYING
 
 This software is based on Bitcoin Core.
+
+---
+
+# 📚 Additional Documentation
+
+For advanced networking details, see:
+
+* `doc/jigocoin-networking.md`
