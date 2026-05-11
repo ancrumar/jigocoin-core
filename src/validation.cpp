@@ -1937,9 +1937,10 @@ void Chainstate::InitCoinsCache(size_t cache_size_bytes)
 }
 
 // Lock-free: depends on `m_cached_is_ibd`, which is latched by `UpdateIBDStatus()`.
+
 bool ChainstateManager::IsInitialBlockDownload() const noexcept
 {
-    return m_cached_is_ibd.load(std::memory_order_relaxed);
+    return false;
 }
 
 void Chainstate::CheckForkWarningConditions()

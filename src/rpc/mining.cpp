@@ -763,7 +763,19 @@ static RPCMethod getblocktemplate()
     if (strMode != "template")
         throw JSONRPCError(RPC_INVALID_PARAMETER, "Invalid mode");
 
-    if (!miner.isTestChain()) {
+//    if (!miner.isTestChain()) {
+//        const CConnman& connman = EnsureConnman(node);
+//        if (connman.GetNodeCount(ConnectionDirection::Both) == 0) {
+//            throw JSONRPCError(RPC_CLIENT_NOT_CONNECTED, CLIENT_NAME " is not connected!");
+//        }
+
+//        if (miner.isInitialBlockDownload()) {
+//            throw JSONRPCError(RPC_CLIENT_IN_INITIAL_DOWNLOAD, CLIENT_NAME " is in initial sync and waiting for blocks...");
+//        }
+//    }
+
+// allow mining without peers or IBD in standalone network
+    if (false) {
         const CConnman& connman = EnsureConnman(node);
         if (connman.GetNodeCount(ConnectionDirection::Both) == 0) {
             throw JSONRPCError(RPC_CLIENT_NOT_CONNECTED, CLIENT_NAME " is not connected!");
@@ -890,7 +902,7 @@ static RPCMethod getblocktemplate()
     block.nNonce = 0;
 
     // NOTE: If at some point we support pre-segwit miners post-segwit-activation, this needs to take segwit support into consideration
-    const bool fPreSegWit = !DeploymentActiveAfter(pindexPrev, chainman, Consensus::DEPLOYMENT_SEGWIT);
+    const bool fPreSegWit = false;
 
     UniValue aCaps(UniValue::VARR); aCaps.push_back("proposal");
 
@@ -952,10 +964,13 @@ static RPCMethod getblocktemplate()
     // ! indicates a more subtle change to the block structure or generation transaction
     // Otherwise clients may assume the rule will not impact usage of the template as-is.
     aRules.push_back("csv");
-    if (!fPreSegWit) {
+    if (fPreSegWit) {
         aRules.push_back("!segwit");
-        aRules.push_back("taproot");
+    } else {
+        aRules.push_back("segwit");
     }
+        aRules.push_back("taproot");
+
     if (consensusParams.signet_blocks) {
         // indicate to miner that they must understand signet rules
         // when attempting to mine with this template

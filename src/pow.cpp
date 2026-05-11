@@ -11,40 +11,67 @@
 #include <uint256.h>
 #include <util/check.h>
 
-unsigned int GetNextWorkRequired(const CBlockIndex* pindexLast, const CBlockHeader *pblock, const Consensus::Params& params)
-{
-    assert(pindexLast != nullptr);
-    unsigned int nProofOfWorkLimit = UintToArith256(params.powLimit).GetCompact();
 
-    // Only change once per difficulty adjustment interval
-    if ((pindexLast->nHeight+1) % params.DifficultyAdjustmentInterval() != 0)
-    {
-        if (params.fPowAllowMinDifficultyBlocks)
-        {
-            // Special difficulty rule for testnet:
-            // If the new block's timestamp is more than 2* 10 minutes
-            // then it MUST be a min-difficulty block.
-            if (pblock->GetBlockTime() > pindexLast->GetBlockTime() + params.nPowTargetSpacing*2)
-                return nProofOfWorkLimit;
-            else
-            {
-                // Return the last non-special-min-difficulty-rules-block
-                const CBlockIndex* pindex = pindexLast;
-                while (pindex->pprev && pindex->nHeight % params.DifficultyAdjustmentInterval() != 0 && pindex->nBits == nProofOfWorkLimit)
-                    pindex = pindex->pprev;
-                return pindex->nBits;
-            }
-        }
-        return pindexLast->nBits;
+unsigned int LWMA(const CBlockIndex* pindexLast, const Consensus::Params& params)
+{
+    const int N = 10;
+    const int64_t T = params.nPowTargetSpacing;
+
+    if (pindexLast->nHeight < N)
+        return UintToArith256(params.powLimit).GetCompact();
+
+    arith_uint256 sum_target = 0;
+    int64_t weighted_times = 0;
+
+    const CBlockIndex* block = pindexLast;
+
+    for (int i = 1; i <= N; i++) {
+        const CBlockIndex* prev = block->pprev;
+
+        int64_t solvetime = block->GetBlockTime() - prev->GetBlockTime();
+
+        if (solvetime > 3 * T) solvetime = 3 * T;
+        if (solvetime < T / 3) solvetime = T / 3;
+
+        weighted_times += solvetime * i;
+
+        arith_uint256 target;
+        target.SetCompact(block->nBits);
+        sum_target += target;
+
+        block = prev;
     }
 
-    // Go back by what we want to be 14 days worth of blocks
-    int nHeightFirst = pindexLast->nHeight - (params.DifficultyAdjustmentInterval()-1);
-    assert(nHeightFirst >= 0);
-    const CBlockIndex* pindexFirst = pindexLast->GetAncestor(nHeightFirst);
-    assert(pindexFirst);
+    arith_uint256 avg_target = sum_target / N;
 
-    return CalculateNextWorkRequired(pindexLast, pindexFirst->GetBlockTime(), params);
+    int64_t k = N * (N + 1) / 2;
+    int64_t next_time = weighted_times / k;
+
+    if (next_time < T / 3)
+        next_time = T / 3;
+
+    arith_uint256 next_target = avg_target * next_time / T;
+
+    if (next_target > UintToArith256(params.powLimit))
+        next_target = UintToArith256(params.powLimit);
+
+    return next_target.GetCompact();
+}
+
+unsigned int GetNextWorkRequired(const CBlockIndex* pindexLast,
+                                 const CBlockHeader* pblock,
+                                 const Consensus::Params& params)
+{
+    if (pindexLast == nullptr)
+        return UintToArith256(params.powLimit).GetCompact();
+
+    int height = pindexLast->nHeight + 1;
+
+    if (height >= params.nLWMAHeight) {
+        return LWMA(pindexLast, params);
+    }
+
+    return pindexLast->nBits;
 }
 
 unsigned int CalculateNextWorkRequired(const CBlockIndex* pindexLast, int64_t nFirstBlockTime, const Consensus::Params& params)

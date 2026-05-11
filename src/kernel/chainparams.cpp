@@ -34,13 +34,22 @@
 
 using namespace util::hex_literals;
 
-static CBlock CreateGenesisBlock(const char* pszTimestamp, const CScript& genesisOutputScript, uint32_t nTime, uint32_t nNonce, uint32_t nBits, int32_t nVersion, const CAmount& genesisReward)
+static CBlock CreateGenesisBlock(const char* pszTimestamp, const CScript& genesisOutputScript,
+                                 uint32_t nTime, uint32_t nNonce, uint32_t nBits,
+                                 int32_t nVersion, const CAmount& genesisReward)
 {
     CMutableTransaction txNew;
     txNew.version = 1;
     txNew.vin.resize(1);
     txNew.vout.resize(1);
-    txNew.vin[0].scriptSig = CScript() << 0x207fffff << CScriptNum(4) << std::vector<unsigned char>((const unsigned char*)pszTimestamp, (const unsigned char*)pszTimestamp + strlen(pszTimestamp));
+
+    txNew.vin[0].scriptSig = CScript()
+        << 0x207fffff
+        << CScriptNum(4)
+        << std::vector<unsigned char>(
+            (const unsigned char*)pszTimestamp,
+            (const unsigned char*)pszTimestamp + strlen(pszTimestamp));
+
     txNew.vout[0].nValue = genesisReward;
     txNew.vout[0].scriptPubKey = genesisOutputScript;
 
@@ -52,6 +61,7 @@ static CBlock CreateGenesisBlock(const char* pszTimestamp, const CScript& genesi
     genesis.vtx.push_back(MakeTransactionRef(std::move(txNew)));
     genesis.hashPrevBlock.SetNull();
     genesis.hashMerkleRoot = BlockMerkleRoot(genesis);
+
     return genesis;
 }
 
@@ -66,11 +76,18 @@ static CBlock CreateGenesisBlock(const char* pszTimestamp, const CScript& genesi
  *     CTxOut(nValue=50.00000000, scriptPubKey=0x5F1DF16B2B704C8A578D0B)
  *   vMerkleTree: 4a5e1e
  */
-static CBlock CreateGenesisBlock(uint32_t nTime, uint32_t nNonce, uint32_t nBits, int32_t nVersion, const CAmount& genesisReward)
+static CBlock CreateGenesisBlock(uint32_t nTime, uint32_t nNonce,
+                                 uint32_t nBits, int32_t nVersion,
+                                 const CAmount& genesisReward)
 {
-    const char* pszTimestamp = "The Times 03/Jan/2009 Chancellor on brink of second bailout for banks";
-    const CScript genesisOutputScript = CScript() << "04678afdb0fe5548271967f1a67130b7105cd6a828e03909a67962e0ea1f61deb649f6bc3f4cef38c4f35504e51ec112de5c384df7ba0b8d578a4c702b6bf11d5f"_hex << OP_CHECKSIG;
-    return CreateGenesisBlock(pszTimestamp, genesisOutputScript, nTime, nNonce, nBits, nVersion, genesisReward);
+    const char* pszTimestamp = "JIGOCOIN Genesis Block 2026-04-06";
+
+    const CScript genesisOutputScript = CScript()
+        << "04678afdb0fe5548271967f1a67130b7105cd6a828e03909a67962e0ea1f61deb649f6bc3f4cef38c4f35504e51ec112de5c384df7ba0b8d578a4c702b6bf11d5f"_hex
+        << OP_CHECKSIG;
+
+    return CreateGenesisBlock(pszTimestamp, genesisOutputScript,
+                              nTime, nNonce, nBits, nVersion, genesisReward);
 }
 
 /**
@@ -93,8 +110,11 @@ public:
         consensus.powLimit = uint256{
         "00000fffffffffffffffffffffffffffffffffffffffffffffffffffffffffff"
         };
-        consensus.nPowTargetTimespan = 14 * 24 * 60 * 60; // two weeks
-        consensus.nPowTargetSpacing = 10 * 60;
+        //consensus.nPowTargetTimespan = 14 * 24 * 60 * 60; // two weeks
+        //consensus.nPowTargetSpacing = 10 * 60;
+        consensus.nPowTargetSpacing = 60;     // 60 segundos por bloque
+        consensus.nPowTargetTimespan = 60 * 10; // coherente (aunque LWMA lo ignora)
+        consensus.nLWMAHeight = 20;
         consensus.fPowAllowMinDifficultyBlocks = false;
         consensus.enforce_BIP94 = false;
         consensus.fPowNoRetargeting = false;
@@ -107,6 +127,7 @@ public:
 
         consensus.nMinimumChainWork = uint256{};
         consensus.defaultAssumeValid = uint256{};
+
 
         /**
          * The message start string is designed to be unlikely to occur in normal data.
