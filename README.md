@@ -1,3 +1,13 @@
+<p align="center">
+  <img src="assets/logo/jigocoin-logo.png" width="220">
+</p>
+
+<h1 align="center">Jigocoin</h1>
+
+<p align="center">
+Digital currency inspired by the principles of Judo:
+Seiryoku Zenyo and Jita Kyoei.
+</p>
 # Jigocoin Core
 
 Jigocoin is a decentralized peer-to-peer digital currency operating on its own blockchain and consensus network.
