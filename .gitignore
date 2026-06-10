@@ -58,3 +58,7 @@ backup_node1_*.tar.gz
 # Local tools (not part of core)
 tools/
 *.bak
+
+audit/
+.github.backup/
+*.bak

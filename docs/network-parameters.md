@@ -81,8 +81,8 @@ Jita Kyoei Seiryoku Zenyo
 
 Block Time:
 
-10 minutes
-600 seconds
+1 minute
+60 seconds
 
 Difficulty Adjustment:
 
@@ -98,7 +98,7 @@ Halving Interval:
 
 Estimated:
 
-≈ 4 years
+≈ 4.8 months / 145.83 days / 3,500 hours
 
 Maximum Supply:
 
@@ -144,7 +144,7 @@ Default Port:
 
 Block Time:
 
-10 minutes
+1 minutes
 
 Difficulty Retarget:
 

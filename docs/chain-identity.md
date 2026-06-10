@@ -127,9 +127,9 @@ Yes (not recommended)
 
 Block Time:
 
-10 minutes
+1 minute
 
-600 seconds
+60 seconds
 
 Difficulty Adjustment Interval:
 
@@ -215,7 +215,7 @@ Default Port:
 
 Block Time:
 
-10 minutes
+1 minutes
 
 Halving Interval:
 

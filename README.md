@@ -1,10 +1,36 @@
 # Jigocoin Core
 
-Jigocoin is a decentralized peer-to-peer digital currency derived from Bitcoin Core.
+Jigocoin is a decentralized peer-to-peer digital currency operating on its own blockchain and consensus network.
 
 This repository contains the reference implementation of the Jigocoin protocol.
 
 Jigocoin allows users to send payments directly to each other without relying on a central authority.
+
+
+## Philosophy
+
+Jigocoin is an independent blockchain project inspired by two principles from Judo:
+
+* **Seiryoku Zenyo** — Maximum efficient use of energy.
+* **Jita Kyoei** — Mutual welfare and benefit.
+
+These principles guide the design of the network, its monetary policy and its long-term development.
+
+## Project Status
+
+Jigocoin operates as an independent blockchain network with:
+
+* Its own consensus network
+* Independent monetary policy
+* Native Jigocoin addresses
+* Independent node infrastructure
+* Active block production and transaction processing
+
+## Origins
+
+Jigocoin originated from the Bitcoin protocol and the Bitcoin Core codebase.
+
+The project preserves proven Bitcoin technologies while evolving into an independent network with its own identity, economic model, infrastructure and roadmap.
 
 ---
 
@@ -281,9 +307,9 @@ Always:
 
 # 🧪 Development Notes
 
-Jigocoin Core is based on Bitcoin Core.
+Jigocoin Core is the reference implementation of the Jigocoin network.
 
-Changes from upstream Bitcoin Core are progressively applied to create an independent network implementation.
+Jigocoin evolves as an independent blockchain project focused on decentralization, efficiency and long-term sustainability.
 
 ---
 
@@ -295,7 +321,7 @@ See:
 
 COPYING
 
-This software is based on Bitcoin Core.
+Jigocoin originated from the Bitcoin Core codebase and continues its development as an independent blockchain network.
 
 ---
 

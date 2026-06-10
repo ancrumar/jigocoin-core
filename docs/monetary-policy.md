@@ -112,29 +112,29 @@ Recompensa del bloque génesis:
 
 Target block interval:
 
-10 minutes per block
+1 minute (60 seconds) per block
 
 Estimated blocks per day:
 
-144 blocks
+1440 blocks
 
 Estimated blocks per year:
 
-52,560 blocks
+525,600 blocks
 
 **ES (España)**
 
 Intervalo objetivo entre bloques:
 
-10 minutos por bloque
+1 minuto (60 segundos) por bloque
 
 Bloques estimados por día:
 
-144 bloques
+1440 bloques
 
 Bloques estimados por año:
 
-52.560 bloques
+525.600 bloques
 
 ---
 
@@ -255,7 +255,7 @@ Plural: kanos
 Symbol / Símbolo: kan
 Decimals / Decimales: 8
 Block Reward / Recompensa: 50 JGC
-Block Time / Tiempo entre bloques: 10 minutes / 10 minutos
+Block Time / Tiempo entre bloques: 1 minute (60 seconds) / 1 minuto (60 segundos)
 Halving Interval / Intervalo de halving: 210,000 blocks
 
 Jigocoin provides a predictable and transparent monetary system designed for long-term stability.
