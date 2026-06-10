@@ -6,338 +6,195 @@
 
 <p align="center">
 Digital currency inspired by the principles of Judo:
-Seiryoku Zenyo and Jita Kyoei.
+<strong>Seiryoku Zenyo</strong> (Maximum Efficient Use of Energy)
+and
+<strong>Jita Kyoei</strong> (Mutual Welfare and Benefit).
 </p>
+
+<p align="center">
+  <img src="https://img.shields.io/github/v/release/ancrumar/jigocoin-core" alt="Release">
+  <img src="https://img.shields.io/github/license/ancrumar/jigocoin-core" alt="License">
+</p>
+
+---
+
 # Jigocoin Core
 
 Jigocoin is a decentralized peer-to-peer digital currency operating on its own blockchain and consensus network.
 
 This repository contains the reference implementation of the Jigocoin protocol.
 
-Jigocoin allows users to send payments directly to each other without relying on a central authority.
+Jigocoin enables users to transfer value directly between participants without requiring a central authority, while promoting efficiency, resilience and mutual benefit.
 
+---
 
 ## Philosophy
 
-Jigocoin is an independent blockchain project inspired by two principles from Judo:
+Jigocoin is inspired by the two foundational principles established by Jigoro Kano, founder of Judo:
 
-* **Seiryoku Zenyo** — Maximum efficient use of energy.
-* **Jita Kyoei** — Mutual welfare and benefit.
+### Seiryoku Zenyo (精力善用)
 
-These principles guide the design of the network, its monetary policy and its long-term development.
+**Maximum Efficient Use of Energy**
 
-## Project Status
+Resources should be used intelligently and efficiently to achieve the greatest possible benefit with the least waste.
 
-Jigocoin operates as an independent blockchain network with:
+### Jita Kyoei (自他共栄)
 
-* Its own consensus network
-* Independent monetary policy
-* Native Jigocoin addresses
-* Independent node infrastructure
-* Active block production and transaction processing
+**Mutual Welfare and Benefit**
 
-## Origins
+Individual success and collective success are interconnected. A healthy network benefits all participants.
 
-Jigocoin originated from the Bitcoin protocol and the Bitcoin Core codebase.
-
-The project preserves proven Bitcoin technologies while evolving into an independent network with its own identity, economic model, infrastructure and roadmap.
+These principles guide both the technical design and the long-term governance of the project.
 
 ---
 
-# 🚀 Build Jigocoin from Source
+## Project Documentation
 
-## System Requirements
-
-Recommended:
-
-* Linux (Ubuntu 22.04+ or Debian 12+)
-* 4 GB RAM minimum
-* 20+ GB disk space
-
----
-
-## Install Dependencies (Ubuntu / Debian)
-
-```bash
-sudo apt update
-
-sudo apt install -y \
-  build-essential \
-  cmake \
-  pkg-config \
-  libevent-dev \
-  libboost-dev \
-  libboost-system-dev \
-  libboost-filesystem-dev \
-  libboost-test-dev \
-  libsqlite3-dev
-```
+| Document | Description |
+|-----------|-------------|
+| `docs/whitepaper.md` | Technical and economic overview |
+| `docs/philosophy.md` | Philosophical foundations |
+| `GOVERNANCE.md` | Governance framework |
+| `ROADMAP.md` | Development roadmap |
+| `NETWORK-TOPOLOGY.md` | Current network topology |
+| `INCIDENTS.md` | Incident registry and lessons learned |
+| `SECURITY.md` | Security policy |
 
 ---
 
-## Clone Repository
+## Network Parameters
 
-```bash
-git clone https://github.com/ancrumar/jigocoin-core.git
+| Parameter | Value |
+|------------|--------|
+| Name | Jigocoin |
+| Symbol | JGC |
+| Consensus | Proof of Work |
+| Blockchain | Independent |
+| Bech32 Prefix | jgc |
+| Reference Client | Jigocoin Core |
 
-cd jigocoin-core
-```
+For detailed technical parameters see:
 
----
-
-## Build Jigocoin
-
-```bash
-mkdir build
-
-cd build
-
-cmake .. -DENABLE_IPC=OFF
-
-make -j$(nproc)
-```
-
-After compilation, binaries will be located in:
-
-```text
-build/bin/jigocoind
-build/bin/jigocoin-cli
-build/bin/jigocoin-wallet
-build/bin/jigocoin-util
-build/bin/jigocoin-tx
-```
+- `docs/network-parameters.md`
+- `docs/chain-identity.md`
+- `docs/monetary-policy.md`
 
 ---
 
-# 🧱 Run a Jigocoin Node
+## Current Status
 
-## Create Data Directory
+### Stable Release
 
-```bash
-mkdir ~/.jigocoin
-```
+**v31.99.1 – Identity Cleanup Baseline**
 
----
+This release establishes the first stable baseline of Jigocoin with:
 
-## Create Configuration File
+- Independent project identity.
+- Governance framework.
+- Public roadmap.
+- Incident management process.
+- Network topology documentation.
+- Project philosophy and whitepaper.
+- Reorganization of inherited upstream documentation.
 
-```bash
-nano ~/.jigocoin/jigocoin.conf
-```
-
-Example configuration:
-
-```ini
-server=1
-daemon=1
-
-rpcuser=jigouser
-rpcpassword=strongpassword
-
-rpcport=30462
-port=19335
-
-# Primary seed node
-addnode=34.10.226.240:19335
-```
+This release introduces **no consensus changes**, **no monetary policy changes** and **no blockchain migration requirements**.
 
 ---
 
-## Start Node
+## Building From Source
 
-```bash
-./build/bin/jigocoind \
-  -datadir=$HOME/.jigocoin \
-  -daemon
-```
-
----
-
-## Verify Node Status
-
-Check blockchain:
-
-```bash
-./build/bin/jigocoin-cli \
-  -datadir=$HOME/.jigocoin \
-  getblockchaininfo
-```
-
-Check peers:
-
-```bash
-./build/bin/jigocoin-cli \
-  -datadir=$HOME/.jigocoin \
-  getpeerinfo
-```
-
----
-
-# 🌐 Network Parameters
-
-## Mainnet
-
-| Parameter     | Value                   |
-| ------------- | ----------------------- |
-| Network       | mainnet                 |
-| P2P Port      | **19335**               |
-| RPC Port      | **30462**               |
-| Bech32 Prefix | **jgc**                 |
-| Message Start | **0x4a 0x47 0x43 0x31** |
-
----
-
-# 🌱 Seed Nodes
-
-The following public node is available for initial synchronization:
-
-```ini
-addnode=34.10.226.240:19335
-```
-
-More seed nodes will be added as the network expands.
-
----
-
-# 💼 Wallet Usage
-
-Create a wallet:
-
-```bash
-jigocoin-cli createwallet "wallet01"
-```
-
-Generate a new address:
-
-```bash
-jigocoin-cli getnewaddress
-```
-
-Backup wallet:
-
-```bash
-jigocoin-cli backupwallet backup.dat
-```
-
----
-
-# 🛠 Troubleshooting
-
-## Node does not connect to peers
-
-Run:
-
-```bash
-jigocoin-cli getpeerinfo
-```
-
-If no peers appear:
-
-Check:
-
-* Port **19335** is open
-* Firewall allows incoming connections
-* Seed node reachable
-* Internet connection active
-
----
-
-## Node connects but does not synchronize (stuck at block 0)
-
-If peers appear in `getpeerinfo` but the node remains stuck at **block 0**, the cause is usually **P2P transport version incompatibility**.
-
-Modern Bitcoin-derived nodes may attempt to use **P2P V2 transport**, while Jigocoin currently requires **V1 transport**.
-
-Add this line to your configuration file:
-
-```ini
-v2transport=0
-```
-
-Example:
-
-```ini
-server=1
-daemon=1
-
-rpcuser=jigouser
-rpcpassword=strongpassword
-
-rpcport=30462
-port=19335
-
-v2transport=0
-
-addnode=34.10.226.240:19335
-```
-
-After adding this option, restart the node.
-
-This resolves the most common synchronization failure in new installations.
-
-
----
-
-## RPC connection problems
-
-Verify:
-
-```ini
-rpcport=30462
-```
-
-File:
-
-```text
-~/.jigocoin/jigocoin.conf
-```
-
----
-
-## Port already in use
-
-Change RPC port:
-
-```ini
-rpcport=30463
-```
-
----
-
-# 🔐 Security Recommendations
-
-Always:
-
-* Backup wallets regularly
-* Use strong RPC credentials
-* Protect wallet files
-* Do not expose RPC port publicly
-
----
-
-# 🧪 Development Notes
-
-Jigocoin Core is the reference implementation of the Jigocoin network.
-
-Jigocoin evolves as an independent blockchain project focused on decentralization, efficiency and long-term sustainability.
-
----
-
-# 📜 License
-
-Jigocoin Core is released under the terms of the MIT License.
+### Linux
 
 See:
 
-COPYING
+- `docs/build-instructions.md`
 
-Jigocoin originated from the Bitcoin Core codebase and continues its development as an independent blockchain network.
+### Node Deployment
+
+See:
+
+- `docs/node-setup.md`
 
 ---
 
-# 📚 Additional Documentation
+## Repository Structure
 
-For advanced networking details, see:
+```text
+assets/                 Branding assets and logos
+docs/                   Project documentation
+doc/upstream/           Archived upstream Bitcoin Core documentation
+src/                    Reference implementation
+test/                   Test suite
+```
 
-- `doc/jigocoin-networking.md`
-- `doc/jigocoin-seed-node.md`
+## Governance
+
+Project governance is documented in:
+
+```text
+GOVERNANCE.md
+```
+
+Development priorities are documented in:
+
+```text
+ROADMAP.md
+```
+
+Operational incidents are recorded in:
+
+```text
+INCIDENTS.md
+```
+
+---
+
+## Network Infrastructure
+
+The current network architecture and node topology are documented in:
+
+```text
+NETWORK-TOPOLOGY.md
+```
+
+This document is updated as the network evolves.
+
+---
+
+## Security
+
+To report a vulnerability, please consult:
+
+```text
+SECURITY.md
+```
+
+Please do not disclose security vulnerabilities publicly before responsible disclosure procedures have been followed.
+
+---
+
+## License
+
+Jigocoin Core is released under the MIT License.
+
+See:
+
+```text
+COPYING
+```
+
+for the full license text.
+
+---
+
+## Acknowledgements
+
+Jigocoin is built upon open-source technologies and benefits from the work of countless contributors in the broader cryptocurrency ecosystem.
+
+Historical upstream Bitcoin Core documentation has been preserved under:
+
+```text
+doc/upstream/
+```
+
+to maintain technical traceability while allowing Jigocoin to develop its own independent identity.
