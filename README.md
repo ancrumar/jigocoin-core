@@ -12,7 +12,7 @@ and
 </p>
 
 <p align="center">
-  <img src="https://img.shields.io/github/v/release/ancrumar/jigocoin-core" alt="Release">
+  <img src="https://img.shields.io/github/v/release/ancrumar/jigocoin-core?display_name=tag" alt="Release">
   <img src="https://img.shields.io/github/license/ancrumar/jigocoin-core" alt="License">
 </p>
 
@@ -31,6 +31,29 @@ Jigocoin enables users to transfer value directly between participants without r
 ## Philosophy
 
 Jigocoin is inspired by the two foundational principles established by Jigoro Kano, founder of Judo:
+
+## Visual Identity
+
+The Jigocoin logo is inspired by the history, philosophy and symbolism of Judo.
+
+The letter **J** represents:
+
+- Jigocoin
+- Judo
+- Professor Jigoro Kano
+
+The black color symbolizes the **Kuro Obi** (black belt), representing the journey from learning to mastery.
+
+The two bars symbolize the knot of the black belt and the two founding principles of Judo:
+
+- Seiryoku Zenyo
+- Jita Kyoei
+
+The green and red background reflects the traditional colors of classical Judo competition tatami.
+
+For a complete explanation see:
+
+[Logo Meaning](assets/branding/logo-meaning.md)
 
 ### Seiryoku Zenyo (精力善用)
 
